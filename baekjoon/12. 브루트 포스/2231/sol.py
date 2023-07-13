@@ -8,4 +8,4 @@ for i in range(1, n+1):   # 해당 분해합의 생성자 찾기
         print(i)
         break
     if i == n:  # 생성자 i와 입력값이 같다는 것은 생성자가 없다는 뜻
-        print(0)
+        print(0).
