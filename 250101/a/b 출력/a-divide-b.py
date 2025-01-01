@@ -1,11 +1,10 @@
 a, b = map(int,input().split())
 
-result = a/b
+print(f"{a//b}.",end="")
 
-str_result = f"{result:.23f}"
+a %= b
 
-slicing = str_result.index(".")
-
-str_result = str_result[:slicing + 22]
-
-print(str_result)
+for _ in range(20):
+    a *= 10
+    print(a//b, end="")
+    a %= b
