@@ -2,7 +2,7 @@ a, b = map(int,input().split())
 
 result = a/b
 
-str_result = f"{result:.22f}"
+str_result = f"{result:.23f}"
 
 slicing = str_result.index(".")
 
