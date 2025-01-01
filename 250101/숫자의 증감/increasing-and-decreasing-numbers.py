@@ -10,4 +10,4 @@ else:
     ans = n
     for _ in range(n):
         print(ans, end=" ")
-        n -= 1
+        ans -= 1
