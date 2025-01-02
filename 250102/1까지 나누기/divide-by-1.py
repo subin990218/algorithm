@@ -7,3 +7,4 @@ while ans > 1:
             ans = ans // i
         else:
             print(i)
+            break
