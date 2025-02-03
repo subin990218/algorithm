@@ -2,7 +2,7 @@ const fs = require("fs")
 
 let input = Number(fs.readFileSync(0).toString().trim())
 
-let ans 
+let ans = ""
 
 if (input==5) {
     ans = "A"
