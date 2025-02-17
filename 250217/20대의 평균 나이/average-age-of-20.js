@@ -6,7 +6,7 @@ let sumVal = 0
 let cnt = 0
 let index = 0
 while (true) {
-    if (input[index] >= 30) {
+    if (parseInt(input[index]/10) !== 2) {
         console.log((sumVal/cnt).toFixed(2))
         break
     } else {
