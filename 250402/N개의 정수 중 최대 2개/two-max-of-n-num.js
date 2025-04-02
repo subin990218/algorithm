@@ -6,16 +6,14 @@ let n = Number(input[0])
 
 let arr = input[1].toString().trim().split(" ").map(Number)
 
-let maxVal = Number.MIN_SAFE_INTEGER, secondVal = Number.MIN_SAFE_INTEGER + 1
+let maxVal = Number.MIN_SAFE_INTEGER;
+let secondVal = Number.MIN_SAFE_INTEGER;
 
 for (let elem of arr) {
-    if (elem > secondVal) {
-        if (elem > maxVal) {
-            maxVal = elem
-        } else {
-            secondVal = elem
-        }
+    if (elem > maxVal) {
+        secondVal = maxVal;
+        maxVal = elem;
+    } else if (elem > secondVal && elem < maxVal) {
+        secondVal = elem;
     }
 }
-
-console.log(maxVal, secondVal)
