@@ -17,3 +17,5 @@ for (let elem of arr) {
         secondVal = elem;
     }
 }
+
+console.log(maxVal, secondVal)
