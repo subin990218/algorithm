@@ -6,7 +6,7 @@ let n = Number(input[0])
 
 let arr = input[1].trim().split(" ").map(Number)
 
-let cnt = 0, minVal = arr[0];
+let cnt = 1, minVal = arr[0];
 
 for (let elem of arr.slice(1)) {
     if (elem < minVal) {
