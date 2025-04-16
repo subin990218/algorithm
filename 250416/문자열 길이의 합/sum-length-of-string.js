@@ -8,7 +8,7 @@ let cnt = 0
 
 for (let i = 1; i <= n; i += 1) {
     for (let i = 0; i < input[i].length; i += 1) {
-        if (input[0] === 'a') {
+        if (input[i][0] === 'a') {
             cnt += 1
         }
         len += 1
