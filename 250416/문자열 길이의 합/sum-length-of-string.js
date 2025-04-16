@@ -7,12 +7,10 @@ let len = 0
 let cnt = 0
 
 for (let i = 1; i <= n; i += 1) {
-    for (let i = 0; i < input[i].length; i += 1) {
         if (input[i][0] === 'a') {
             cnt += 1
         }
-        len += 1
-    }
+        len += input[i].length
 }
 
 console.log(len, cnt)
