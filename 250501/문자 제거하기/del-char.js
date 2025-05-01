@@ -8,9 +8,9 @@ for (let i = 1; i < input.length; i += 1) {
     let n = Number(input[i])
     if (str.length !== 1) {
         if (n >= str.length) {
-            str[str.length - 1] = ""
+            str.splice(str.length - 1, 1)
         } else {
-            str[n] = ""
+            str.splice(n, 1)
         }
         console.log(str.join(""))
     }
