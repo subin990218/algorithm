@@ -10,7 +10,11 @@ function maxDay(m) {
     } else if (m === 2) {
         return 28
     } else {
-        return 30
+        if (m < 12) {
+            return 30
+        } else {
+            return 0
+        }
     }
 }
 
