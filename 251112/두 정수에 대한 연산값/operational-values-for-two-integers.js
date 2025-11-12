@@ -7,12 +7,11 @@ function swap(a, b) {
     if (a > b) {
         a += 25
         b *= 2
-        return `${b} ${a}`
     } else {
         b += 25
         a *= 2
-        return `${a} ${b}`
     }
+    return `${a} ${b}`
 }
 
 const ans = swap(a, b)
