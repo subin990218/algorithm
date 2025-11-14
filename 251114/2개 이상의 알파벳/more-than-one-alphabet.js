@@ -12,15 +12,12 @@ function isSameCharacter(word) {
             for (let character of characterList) {
                 if (elem !== character) {
                     characterList.push(elem)
+                    return "Yes"
                 }
             }
         }
     }
-    if (characterList.length > 1) {
-        return "Yes"
-    } else {
-        return "No"
-    }
+    return "No"
 }
 
 let answer = isSameCharacter(A)
