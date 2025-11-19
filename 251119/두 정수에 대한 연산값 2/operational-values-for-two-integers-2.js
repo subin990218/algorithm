@@ -6,12 +6,12 @@ let b = Number(input[1]);
 
 function makeAns(s,l) {
     if (s > l) {
-        let temp = s;
-        s = l;
-        l = temp
+        l += 10;
+        s *= 2;
+    } else {
+        s += 10;
+        l *= 2;
     }
-    s += 10;
-    l *= 2;
     return [s, l]
 }
 
