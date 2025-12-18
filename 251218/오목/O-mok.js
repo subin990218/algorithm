@@ -13,12 +13,14 @@ const directions = [
 function checkWin(row, col, color) {
   for (const [dr, dc] of directions) {
     let count = 1;
+    let positions = [[row, col]];
     
     // 정방향 체크
     let nr = row + dr;
     let nc = col + dc;
     while (nr >= 0 && nr < 19 && nc >= 0 && nc < 19 && arr[nr][nc] === color) {
       count++;
+      positions.push([nr, nc]);
       nr += dr;
       nc += dc;
     }
@@ -28,29 +30,24 @@ function checkWin(row, col, color) {
     nc = col - dc;
     while (nr >= 0 && nr < 19 && nc >= 0 && nc < 19 && arr[nr][nc] === color) {
       count++;
+      positions.unshift([nr, nc]);
       nr -= dr;
       nc -= dc;
     }
     
     // 정확히 5개인지 확인 (6목 제외)
     if (count === 5) {
-      // 가장 왼쪽 또는 위쪽 돌의 위치 찾기
-      let startRow = row;
-      let startCol = col;
+      // 가로 방향(dr=0, dc=1): 가장 왼쪽 (열 번호가 가장 작은)
+      // 세로 방향(dr=1, dc=0): 가장 위쪽 (행 번호가 가장 작은)
+      // 대각선 \(dr=1, dc=1): 가장 왼쪽 위
+      // 대각선 /(dr=-1, dc=1): 가장 왼쪽 아래
       
-      // 역방향으로 가장 시작점 찾기
-      while (true) {
-        const prevRow = startRow - dr;
-        const prevCol = startCol - dc;
-        if (prevRow >= 0 && prevRow < 19 && prevCol >= 0 && prevCol < 19 && arr[prevRow][prevCol] === color) {
-          startRow = prevRow;
-          startCol = prevCol;
-        } else {
-          break;
-        }
-      }
+      positions.sort((a, b) => {
+        if (a[1] !== b[1]) return a[1] - b[1]; // 열 우선 정렬
+        return a[0] - b[0]; // 같으면 행 정렬
+      });
       
-      return [startRow + 1, startCol + 1]; // 1-based 인덱스
+      return [positions[0][0] + 1, positions[0][1] + 1]; // 1-based 인덱스
     }
   }
   
